@@ -1,0 +1,31 @@
+{
+  "generated": "2026-09-11",
+  "source": "https://savantcat.cn/answers/",
+  "clusters": {
+    "ai-service-standard": {
+      "slug": "ai-service-standard",
+      "h1": "AI 客服怎么过国标 GB/T 47746—2026？6 个问题讲清达标路径",
+      "description": "GB/T 47746—2026《顾客联络服务 人工与智能客户服务协同要求》2026-09-01 实施。用 6 个原子问题讲清它是什么、谁要管、53 条强制自查项从哪来、哪 5 类场景必须自动转人工、怎么分步自查、上线走备案还是登记。",
+      "keywords": "GB/T 47746, AI客服国标, 人工与智能客服协同, AI客服自查, 自动转人工, 客服合规, 生成式AI备案",
+      "count": 6
+    },
+    "enterprise-knowledge-base": {
+      "slug": "enterprise-knowledge-base",
+      "h1": "企业知识库怎么搭才不白搭？从文档切分到答案层的完整方法",
+      "description": "企业知识库怎么搭才不白搭？本文把选型、文档切分、评测集、本地部署与 SaaS 成本、以及如何做成被大模型引用的「答案层」拆成 6 个原子问题，每个都给出可直接摘走的结论。",
+      "keywords": "企业知识库搭建,RAG知识库,知识库切分,知识库评测集,本地部署知识库,SaaS知识库,答案层,GEO优化",
+      "count": 6
+    }
+  },
+  "en_clusters": {
+    "ai-service-standard": {
+      "h1": "",
+      "count": 6
+    },
+    "enterprise-knowledge-base": {
+      "h1": "",
+      "count": 6
+    }
+  },
+  "atom_count": 12
+}

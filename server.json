@@ -1,0 +1,14 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/draft/server.schema.json",
+  "name": "io.github.savantcat/answers",
+  "title": "AI 客服国标合规知识库 (GB/T 47746—2026)",
+  "description": "China's GB/T 47746—2026 AI customer-service compliance knowledge base: what the standard requires, which 5 scenarios must auto-escalate to a human agent, the mandatory self-check list, and whether deployment needs filing or registration. Every answer cites the relevant clause.",
+  "version": "1.0.0",
+  "websiteUrl": "https://savantcat.cn/mcp/",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://savantcat.cn/mcp"
+    }
+  ]
+}

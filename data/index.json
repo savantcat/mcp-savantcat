@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "what-is-gbt47746",
+    "cluster": "ai-service-standard",
+    "order": 1,
+    "question": "GB/T 47746—2026 是什么标准？哪些企业要管？",
+    "short_answer": "GB/T 47746—2026《顾客联络服务 人工与智能客户服务协同要求》是 2026-05-25 发布、2026-09-01 实施的推荐性国家标准，归口 SAC/TC 264，共 15 页，讲的是人工客服与 AI 客服如何协同交接。凡向顾客提供 AI 客服或人机混合客服的企业，都应把它当作设计与自查依据。",
+    "keywords": "GB/T 47746, 顾客联络服务, 人工与智能客户服务协同要求, AI客服标准, SAC/TC 264, 客服国标",
+    "faqs": 4,
+    "facts": 5,
+    "sources": 3
+  },
+  {
+    "slug": "is-it-mandatory",
+    "cluster": "ai-service-standard",
+    "order": 2,
+    "question": "GB/T 47746 是推荐性标准，我的公司必须达标吗？",
+    "short_answer": "从属性上看，GB/T 47746—2026 是推荐性标准，不设\"必须达标\"的法律义务。但它内部大量使用规范语气——第 4~9 章 47 个条款节点中 44 个是要求型，含\"应\"的条款共 24 个。一旦合同、平台规则或采购文件把它列为验收依据，它就会变成你实际要面对的约束。",
+    "keywords": "GB/T 47746 强制性, 推荐性标准, AI客服合规义务, 客服标准达标, 推荐性标准约束力",
+    "faqs": 4,
+    "facts": 4,
+    "sources": 3
+  },
+  {
+    "slug": "53-mandatory-items",
+    "cluster": "ai-service-standard",
+    "order": 3,
+    "question": "AI 客服的 53 条强制自查项是怎么来的？",
+    "short_answer": "53 条强制项不是标准里现成的一张表，而是把标准第 4~9 章的 47 个条款节点拆解、翻译成可逐条打勾的检查项后得出的：47 个节点中 44 个是要求型，最终整理出 59 项检查表，其中 53 项属强制项。条款数与检查项数不是一对一，比如 5.2.2.6 一条就拆成了 5 条检查项。",
+    "keywords": "AI客服自查表, GB/T 47746 强制项, 53条自查项, 客服标准条款解析, 自查表怎么来",
+    "faqs": 4,
+    "facts": 4,
+    "sources": 2
+  },
+  {
+    "slug": "auto-transfer-scenarios",
+    "cluster": "ai-service-standard",
+    "order": 4,
+    "question": "哪 5 类场景必须自动转人工？",
+    "short_answer": "GB/T 47746—2026 第 5.2.2.6 条规定了五类必须自动转接人工的场景：a) 交互达到失败阈值仍无法识别；b) 客户明确拒绝智能服务；c) 对话内容涉及信息安全；d) 涉及人身安全、财产安全的紧急情况或风险场景；e) 智能响应超时（原文举例超过 3 min）。",
+    "keywords": "自动转人工, 5.2.2.6, AI客服转人工场景, 智能转人工, 客服国标转接, 情绪感知",
+    "faqs": 4,
+    "facts": 4,
+    "sources": 3
+  },
+  {
+    "slug": "how-to-self-check",
+    "cluster": "ai-service-standard",
+    "order": 5,
+    "question": "企业怎么自查 AI 客服是否达标？分几步做？",
+    "short_answer": "建议分五步：圈定范围、建立检查台账、优先核 53 项强制项（尤其 5.2.2.6 的五类自动转人工）、逐项留证据、定复检周期。检查表共 59 项、其中 53 项为强制项，先做强制项再补优化项。",
+    "keywords": "AI客服自查, 客服达标自检, GB/T 47746 自查步骤, 客服合规自查表, AI客服检查清单",
+    "faqs": 4,
+    "facts": 4,
+    "sources": 2
+  },
+  {
+    "slug": "registration-and-filing",
+    "cluster": "ai-service-standard",
+    "order": 6,
+    "question": "AI 客服上线要备案还是登记？区别是什么？",
+    "short_answer": "备案和登记是两条不同的申报路径，不是同一件事的两种叫法：上海市 2026 年 1—9 月公开名单共 146 条，其中生成式 AI 备案 75 条、登记 71 条，两者并列出现在同一份名单里。自己提供生成式 AI 能力的通常走备案，仅调用他人能力的通常走登记或不申报，具体以属地主管部门口径为准。",
+    "keywords": "生成式AI备案, AI算法登记, AI客服备案, 大模型备案区别, 上线合规申报",
+    "faqs": 4,
+    "facts": 5,
+    "sources": 2
+  },
+  {
+    "slug": "why-kb-fails",
+    "cluster": "enterprise-knowledge-base",
+    "order": 1,
+    "question": "为什么企业知识库搭好了却没人用？",
+    "short_answer": "知识库没人用，多数不是模型不行，而是三件事没做：FAQ 和政策没分桶切分、没有评测集做门禁、内容没接到员工和客户真正会打开的入口。库建好不等于有人用，最后一百米是流程问题。",
+    "keywords": "知识库没人用,企业知识库失败原因,知识库切分,知识库评测集,知识库落地,知识库入口",
+    "faqs": 3,
+    "facts": 5,
+    "sources": 2
+  },
+  {
+    "slug": "rag-vs-finetune",
+    "cluster": "enterprise-knowledge-base",
+    "order": 2,
+    "question": "企业知识库该用 RAG 还是微调？",
+    "short_answer": "企业知识库绝大多数场景应该选 RAG，而不是微调。RAG 更新即时、答案可溯源、改文档即生效；微调成本高、知识更新慢，且很难说清答案来自哪份文档。只有固定风格、固定格式的场景才考虑微调。",
+    "keywords": "RAG还是微调,企业知识库选型,RAG知识库,大模型微调,检索增强生成,知识库技术选型",
+    "faqs": 3,
+    "facts": 5,
+    "sources": 2
+  },
+  {
+    "slug": "how-to-chunk",
+    "cluster": "enterprise-knowledge-base",
+    "order": 3,
+    "question": "知识库文档要怎么切分？FAQ 和政策为什么要分开切？",
+    "short_answer": "FAQ 按「一问一答」成对切分，政策条款按条款切分并把条款号回填进分块元数据，而且这两类不能进同一个索引——前者靠问题相似度检索，后者靠条款精确匹配，混在一起会互相干扰。",
+    "keywords": "知识库切分,文档分块,FAQ切分,政策条款切分,分块分桶,知识库索引,定长切分",
+    "faqs": 3,
+    "facts": 5,
+    "sources": 2
+  },
+  {
+    "slug": "evaluation-set",
+    "cluster": "enterprise-knowledge-base",
+    "order": 4,
+    "question": "怎么判断知识库答得准不准？评测集怎么做？",
+    "short_answer": "建 100~300 条「提问→标准答案」的评测集当门禁，并且把 recall@k（想找的内容有没有被召回）和 answer_acc（最终答案对不对）分开统计，不能合成一个分——否则你分不清错在检索还是错在生成。",
+    "keywords": "知识库评测集,recall@k,answer_acc,知识库准确率,知识库门禁,RAG评测",
+    "faqs": 3,
+    "facts": 5,
+    "sources": 2
+  },
+  {
+    "slug": "self-hosted-vs-saas",
+    "cluster": "enterprise-knowledge-base",
+    "order": 5,
+    "question": "企业知识库选本地部署还是 SaaS？成本差多少？",
+    "short_answer": "本地部署与 SaaS 的差别主要在数据主权、一次性成本还是订阅成本、以及要不要专人维护。本地部署（私有化）参考价约 ¥5000 起、年费约 ¥2000 起（小微客户口径），数据留在自己手里；SaaS 订阅门槛低、免维护，但数据放在第三方。",
+    "keywords": "知识库本地部署,知识库SaaS,私有化部署,知识库成本,企业知识库选型,RAGFlow部署",
+    "faqs": 3,
+    "facts": 5,
+    "sources": 2
+  },
+  {
+    "slug": "kb-to-answer-layer",
+    "cluster": "enterprise-knowledge-base",
+    "order": 6,
+    "question": "知识库怎么变成「答案层」，让大模型主动引用你？",
+    "short_answer": "核心机制是「一次生产、两个出口」：同一份原子问答，出口①喂企业自己的 AI 客服（对内答得准），出口②发布为公开页并进 llms.txt / FAQPage 被大模型抓取引用（对外被说到）。成本不是两倍，是同一份内容。",
+    "keywords": "答案层,大模型引用,GEO优化,llms.txt,FAQPage,JSON-LD,AI搜索优化",
+    "faqs": 4,
+    "facts": 5,
+    "sources": 3
+  }
+]
