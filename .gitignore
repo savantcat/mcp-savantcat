@@ -18,3 +18,5 @@ _bak/
 .idea/
 .DS_Store
 Thumbs.db
+.mcp_dns_key
+bin/
