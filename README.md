@@ -1,12 +1,21 @@
 # savantcat-answers-mcp
 
-> 中国 AI 客服国标合规知识库 · MCP Server
+> **把中国 AI 客服国标 GB/T 47746—2026 变成 Agent 能直接调用的工具。**
 > An MCP server for China's **GB/T 47746—2026** AI customer-service compliance standard.
 
 [![MCP](https://img.shields.io/badge/MCP-2025--06--18-blue)](https://modelcontextprotocol.io)
 [![Protocol](https://img.shields.io/badge/transport-streamable--http-green)]()
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 [![Endpoint](https://img.shields.io/badge/endpoint-live-brightgreen)](https://savantcat.cn/mcp)
+[![API Key](https://img.shields.io/badge/API%20Key-不需要-success)](https://savantcat.cn/mcp)
+[![Tools](https://img.shields.io/badge/tools-5-orange)](https://savantcat.cn/mcp)
+
+### 为什么值得接
+
+**2026-09-01 已经实施了。** 只要你在用 AI 客服，这份标准的合规问题就绕不过去 ——
+而标准原文 40 多页、条款密度极高，「AI 客服怎么算达标」散落在 4~9 章里，人工翻效率极低。
+
+这个 MCP 把**条款级问答**做成工具：答案全部标注条款出处，Agent 一问即得，**不用装、不用 Key、公开只读**。
 
 ---
 
