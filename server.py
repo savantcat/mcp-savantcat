@@ -25,6 +25,13 @@ import os
 import re
 import sys
 
+# 工具注解：M8ven 审核指出 5/5 工具缺 4 个 hint，OpenAI 目录会直接拒收缺项工具。
+# 本服务 5 个工具全部为纯读、幂等、不接触外部世界，统一声明为 RO_ANN。
+try:
+    from mcp.types import ToolAnnotations
+except ImportError:  # 老版本 SDK 无该类型时降级为 dict，行为一致
+    ToolAnnotations = dict
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data")
 
@@ -160,8 +167,11 @@ mcp = _MCPServer(
     ),
 )
 
+RO_ANN = ToolAnnotations(readOnlyHint=True, destructiveHint=False,
+                         idempotentHint=True, openWorldHint=False)
 
-@mcp.tool()
+
+@mcp.tool(annotations=RO_ANN)
 def list_questions(cluster: str = "") -> str:
     """列出全部合规问答的标题清单。
 
@@ -180,7 +190,7 @@ def list_questions(cluster: str = "") -> str:
     return json.dumps(out, ensure_ascii=False, indent=2)
 
 
-@mcp.tool()
+@mcp.tool(annotations=RO_ANN)
 def search_answers(query: str, top_k: int = 5) -> str:
     """按关键词检索合规问答，返回最相关的若干条（含简要答案）。
 
@@ -193,7 +203,7 @@ def search_answers(query: str, top_k: int = 5) -> str:
     return json.dumps({"query": query, "hits": len(hits), "results": hits}, ensure_ascii=False, indent=2)
 
 
-@mcp.tool()
+@mcp.tool(annotations=RO_ANN)
 def get_answer(slug: str) -> str:
     """按 slug 取一条问答的完整内容（正文 + 要点 + 标准条款依据 + 常见追问）。
 
@@ -209,7 +219,7 @@ def get_answer(slug: str) -> str:
     return json.dumps(_public(item, with_body=True), ensure_ascii=False, indent=2)
 
 
-@mcp.tool()
+@mcp.tool(annotations=RO_ANN)
 def self_check_list() -> str:
     """取 GB/T 47746-2026 的自查清单：企业对照检查自家 AI 客服是否达标。"""
     keys = [k for k in ANSWERS if "53" in k and "mandatory" in k] or \
@@ -222,7 +232,7 @@ def self_check_list() -> str:
                        "items": items}, ensure_ascii=False, indent=2)
 
 
-@mcp.tool()
+@mcp.tool(annotations=RO_ANN)
 def standard_info() -> str:
     """获取 GB/T 47746-2026 标准的元信息（发布/实施日期、归口、篇幅、核心要求）。"""
     return json.dumps(STANDARD, ensure_ascii=False, indent=2)
