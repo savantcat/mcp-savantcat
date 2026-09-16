@@ -9,7 +9,7 @@
 [![Endpoint](https://img.shields.io/badge/endpoint-live-brightgreen)](https://savantcat.cn/mcp)
 [![API Key](https://img.shields.io/badge/API%20Key-不需要-success)](https://savantcat.cn/mcp)
 [![Tools](https://img.shields.io/badge/tools-5-orange)](https://savantcat.cn/mcp)
-[![M8ven Score](https://m8ven.ai/badge/mcp/savantcat-mcp-savantcat-hmq967?v=369bce6fdde428b23e08fc9b3299cb6b)](https://m8ven.ai/mcp/savantcat-mcp-savantcat-hmq967)
+[![M8ven Score](https://m8ven.ai/badge/mcp/savantcat/mcp-savantcat)](https://m8ven.ai/mcp/savantcat/mcp-savantcat)
 
 ### 为什么值得接
 
