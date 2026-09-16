@@ -9,7 +9,7 @@
 [![Endpoint](https://img.shields.io/badge/endpoint-live-brightgreen)](https://savantcat.cn/mcp)
 [![API Key](https://img.shields.io/badge/API%20Key-不需要-success)](https://savantcat.cn/mcp)
 [![Tools](https://img.shields.io/badge/tools-5-orange)](https://savantcat.cn/mcp)
-[![M8ven Score](https://m8ven.ai/badge/mcp/savantcat/mcp-savantcat)](https://m8ven.ai/mcp/savantcat/mcp-savantcat)
+[![M8ven Score](https://m8ven.ai/badge/mcp/savantcat-mcp-savantcat-hmq967)](https://m8ven.ai/mcp/savantcat-mcp-savantcat-hmq967)
 
 ### 为什么值得接
 
@@ -82,6 +82,23 @@ https://savantcat.cn/mcp
   }
 }
 ```
+
+### 腾讯 WorkBuddy / CodeBuddy
+
+WorkBuddy 与 CodeBuddy 原生支持远程 HTTP MCP。打开侧边栏 **插件 → MCP 服务器 → 配置 MCP**，把下面这段粘进 `mcp.json` 即可（用户级 `~/.workbuddy/mcp.json`，项目级 `<项目目录>/.workbuddy/mcp.json`）：
+
+```json
+{
+  "mcpServers": {
+    "savantcat-answers": {
+      "type": "http",
+      "url": "https://savantcat.cn/mcp"
+    }
+  }
+}
+```
+
+保存后新建一次会话（或在 MCP 列表点「信任」）即生效。公网只读、不需要 Key，也不用装 Node.js 或任何本地进程。
 
 ### Hermes Agent
 
