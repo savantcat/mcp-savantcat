@@ -74,6 +74,12 @@ ANSWERS = _load("answers.json")       # slug -> 完整原子
 INDEX = _load("index.json")           # 轻量索引列表
 META = _load("meta.json")
 CLUSTERS = META.get("clusters", {})
+# 61 项自查清单本体。单独成文件，让 self_check_list 直接给出清单，
+# 而不是靠 slug 猜一篇解释文（曾经因此只返回 1 条）。
+try:
+    CHECKLIST = _load("checklist.json")
+except (IOError, OSError, ValueError):
+    CHECKLIST = {}                    # 数据缺失时仅少清单，不影响其余 4 个工具
 
 STANDARD = {
     "code": "GB/T 47746-2026",
@@ -221,15 +227,45 @@ def get_answer(slug: str) -> str:
 
 @mcp.tool(annotations=RO_ANN)
 def self_check_list() -> str:
-    """取 GB/T 47746-2026 的自查清单：企业对照检查自家 AI 客服是否达标。"""
-    keys = [k for k in ANSWERS if "53" in k and "mandatory" in k] or \
-           [k for k in ANSWERS if "self-check" in k or "self_check" in k]
-    if not keys:
-        return json.dumps({"error": "自查清单暂未收录"}, ensure_ascii=False)
-    items = [_public(ANSWERS[k], with_body=True) for k in keys[:2]]
-    return json.dumps({"standard": STANDARD["code"],
-                       "how_to_use": "先做强制项，再补优化项；分步自查见 body_md",
-                       "items": items}, ensure_ascii=False, indent=2)
+    """取 GB/T 47746-2026 的自查清单：企业对照检查自家 AI 客服是否达标。
+
+    返回**清单本体**（61 项：id / 条款 / 等级 / 是否一票项 / 要求 / 怎么补），
+    外加一票项速查与用法；「61 项怎么来的」那篇解释文随附在 explainer 字段。
+    """
+    explainer = None
+    for k in ANSWERS:
+        if ("53" in k and "mandatory" in k) or "self-check" in k or "self_check" in k:
+            explainer = _public(ANSWERS[k], with_body=True)
+            break
+
+    if not CHECKLIST:
+        if not explainer:
+            return json.dumps({"error": "自查清单暂未收录"}, ensure_ascii=False)
+        return json.dumps({"standard": STANDARD["code"],
+                           "how_to_use": "清单数据缺失，暂返回解释文",
+                           "items": [explainer]}, ensure_ascii=False, indent=2)
+
+    out = {
+        "standard": STANDARD["code"],
+        "standard_title_cn": STANDARD["title_cn"],
+        "checklist_version": CHECKLIST["meta"]["checklist_version"],
+        "verified_on": CHECKLIST["meta"]["verified_on"],
+        "counts": CHECKLIST["counts"],
+        "how_to_use": CHECKLIST["how_to_use"],
+        "veto_items": CHECKLIST["veto_items"],
+        "items": CHECKLIST["items"],
+        "source": CHECKLIST["meta"]["source"],
+        "onepager": {"zh": CHECKLIST["meta"]["onepager_zh"],
+                     "en": CHECKLIST["meta"]["onepager_en"],
+                     "note": "单页 A4 打印版，先查 5 项一票项"},
+        "open_data": CHECKLIST["meta"]["open_data"],
+        "license": CHECKLIST["meta"]["license"],
+        "citation": CHECKLIST["meta"]["citation"],
+        "disclaimer": CHECKLIST["meta"]["disclaimer"],
+    }
+    if explainer:
+        out["explainer"] = explainer
+    return json.dumps(out, ensure_ascii=False, indent=2)
 
 
 @mcp.tool(annotations=RO_ANN)
@@ -249,7 +285,8 @@ def _selftest():
     print("[4] get_answer         -> %s | body=%d字 facts=%d faqs=%d" % (
         r["question"], len(r.get("body_md", "")), len(r.get("facts", [])), len(r.get("faqs", []))))
     r = json.loads(self_check_list())
-    print("[5] self_check_list    -> items=%d" % len(r.get("items", [])))
+    print("[5] self_check_list    -> items=%d counts=%s veto=%d"
+          % (len(r.get("items", [])), r.get("counts"), len(r.get("veto_items", []))))
     r = json.loads(get_answer("不存在的slug"))
     print("[6] 容错               ->", r.get("error"), "did_you_mean=", r.get("did_you_mean"))
     print("\n✅ 6/6 工具自检通过")
