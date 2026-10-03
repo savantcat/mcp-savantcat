@@ -1,0 +1,560 @@
+{
+ "counts": {
+  "clauses_covered": 31,
+  "may": 9,
+  "shall": 48,
+  "should": 4,
+  "total": 61,
+  "veto": 5
+ },
+ "how_to_use": "先查 veto 项（一票否决，任一项不满足即判不达标），再按 level 先清 shall（应）再做 should/may（宜/可）。",
+ "items": [
+  {
+   "clause": "4.1",
+   "how_to_fix": "明确人工坐席数量与在线时段，写进制度",
+   "id": "A1",
+   "level": "shall",
+   "requirement": "结合行业属性，配备与用户需求相匹配的人工客户服务（不能只留 AI，没人兜底）",
+   "veto": false
+  },
+  {
+   "clause": "4.1",
+   "how_to_fix": "出一份《人机协同服务规范》，1-2 页即可",
+   "id": "A2",
+   "level": "shall",
+   "requirement": "建立适配人工与智能客服协同的组织制度",
+   "veto": false
+  },
+  {
+   "clause": "4.1",
+   "how_to_fix": "写清「AI 挂了怎么转人工」的兜底流程",
+   "id": "A3",
+   "level": "shall",
+   "requirement": "制定灾害、系统故障等场景的应急保障机制",
+   "veto": false
+  },
+  {
+   "clause": "4.1",
+   "how_to_fix": "指定协同服务负责人（可与 F1 同一人）",
+   "id": "A4",
+   "level": "shall",
+   "requirement": "明确人机协同的组织架构",
+   "veto": false
+  },
+  {
+   "clause": "4.1",
+   "how_to_fix": "客服系统须有工单模块，不能只有聊天窗",
+   "id": "A5",
+   "level": "shall",
+   "requirement": "搭建含客户信息管理、工单处理的内部系统",
+   "veto": false
+  },
+  {
+   "clause": "4.1",
+   "how_to_fix": "检查官网/小程序首页，客服入口是否一眼可见",
+   "id": "A6",
+   "level": "shall",
+   "requirement": "以清晰、醒目、明确的方式提供客户服务入口",
+   "veto": false
+  },
+  {
+   "clause": "4.1",
+   "how_to_fix": "录入产品、价格、政策、常见问答",
+   "id": "A7",
+   "level": "shall",
+   "requirement": "建立知识库",
+   "veto": false
+  },
+  {
+   "clause": "4.1",
+   "how_to_fix": "定个周期（如每月一次），留培训记录",
+   "id": "A8",
+   "level": "shall",
+   "requirement": "定期开展智能客服优化训练，并对客服人员培训",
+   "veto": false
+  },
+  {
+   "clause": "4.2",
+   "how_to_fix": "列出「交给 AI」的问题清单",
+   "id": "A9",
+   "level": "shall",
+   "requirement": "职责划分清晰：智能客服优先处理标准化程度高且知识库有明确答案的问题",
+   "veto": false
+  },
+  {
+   "clause": "4.2",
+   "how_to_fix": "列出「必须人工」的问题清单",
+   "id": "A10",
+   "level": "shall",
+   "requirement": "人工客服优先处理需多步骤分析或综合多个信息源的问题，以及智能客服未能解决的问题",
+   "veto": false
+  },
+  {
+   "clause": "4.3",
+   "how_to_fix": "技术上必须做会话上下文传递，这是硬要求",
+   "id": "A11",
+   "level": "shall",
+   "requirement": "双向切换体验连贯；切换时系统需同步传递客户身份信息、历史交互记录等关键数据",
+   "veto": false
+  },
+  {
+   "clause": "4.4",
+   "how_to_fix": "配合 E 区一起做",
+   "id": "A12",
+   "level": "shall",
+   "requirement": "建立信息与数据安全机制，含数据获取/处理/使用，以及模型、人员等安全管理机制",
+   "veto": false
+  },
+  {
+   "clause": "5.1.1",
+   "how_to_fix": "同 A6",
+   "id": "B1",
+   "level": "shall",
+   "requirement": "客服系统须以清晰、醒目、明确的方式提供客户服务入口",
+   "veto": false
+  },
+  {
+   "clause": "5.1.1",
+   "how_to_fix": "分配策略要能识别老年客户并倾斜人工",
+   "id": "B2",
+   "level": "shall",
+   "requirement": "开始阶段须根据问题解决力、整体话务量和承接力、客户群体（如老龄客户）对智能客服的接受程度，合理分配工单",
+   "veto": false
+  },
+  {
+   "clause": "5.1.1",
+   "how_to_fix": "排队提示不能只显示「请等待」，要给数",
+   "id": "B3",
+   "level": "shall",
+   "requirement": "须通过文字或语音告知客户排队人数或预计等待时长",
+   "veto": false
+  },
+  {
+   "clause": "5.1.2",
+   "how_to_fix": "这是「AI 该干嘛」的正面清单",
+   "id": "B4",
+   "level": "should",
+   "requirement": "简单重复/标准化问题、知识库有明确答案、呼入量大人工接不过来 → 宜优先给智能客服",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "转人工指令必须一触即达",
+   "id": "B5",
+   "level": "shall",
+   "requirement": "客户明确表示转人工服务 → 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "配置复杂性识别或人工兜底规则",
+   "id": "B6",
+   "level": "shall",
+   "requirement": "问题较复杂（个性化需求、模糊表达、涉及跨部门协调）→ 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "低频繁问题 AI 答不准，直接转人",
+   "id": "B7",
+   "level": "shall",
+   "requirement": "问题出现频次较低（原文举例：过去 1 年内出现次数不超过 3 次）→ 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "设「答不出就转」的兜底，禁止硬编答案",
+   "id": "B8",
+   "level": "shall",
+   "requirement": "知识库对问题没有明确答案 → 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "同 B21d，建风险场景词库",
+   "id": "B9",
+   "level": "shall",
+   "requirement": "涉及客户人身、财产安全的场景 → 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "需记录来访次数与情绪，系统要有这个计数",
+   "id": "B10",
+   "level": "shall",
+   "requirement": "客户 24 h 内来访 ≥ 3 次且对智能客服表示明显不满 → 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "有客户画像的走高优先；没有就设「转人工」引导",
+   "id": "B11",
+   "level": "shall",
+   "requirement": "客户处于特定年龄阶段（老年人、未成年人等）、对智能客服接受程度较低 → 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.1.3",
+   "how_to_fix": "情绪识别 + 高危词库",
+   "id": "B12",
+   "level": "shall",
+   "requirement": "客户情绪极度激动、扬言采取极端行为等无法由智能客服处理的场景 → 应优先给人工",
+   "veto": false
+  },
+  {
+   "clause": "5.2.1",
+   "how_to_fix": "一致性要求，技术上必须打通",
+   "id": "B13",
+   "level": "shall",
+   "requirement": "切换时须完整、准确同步传递关键数据：顾客身份信息、历史交互记录、问题描述及工单状态",
+   "veto": false
+  },
+  {
+   "clause": "5.2.1",
+   "how_to_fix": "同 B3",
+   "id": "B14",
+   "level": "shall",
+   "requirement": "切换前的等待期间，须通过语音或文字告知客户预计排队时长",
+   "veto": false
+  },
+  {
+   "clause": "5.2.1",
+   "how_to_fix": "这是「转人工要再讲一遍」的病根，国标点名了",
+   "id": "B15",
+   "level": "should",
+   "requirement": "切换完成后，不宜要求客户重复其在切换前已提供的信息或已陈述的问题",
+   "veto": false
+  },
+  {
+   "clause": "5.2.2.2",
+   "how_to_fix": "建关键词表，至少覆盖这三组",
+   "id": "B16",
+   "level": "shall",
+   "requirement": "关键词触发：客户输入「转人工」「人工客服」「联系人工」等，识别后自动触发转接",
+   "veto": false
+  },
+  {
+   "clause": "5.2.2.3",
+   "how_to_fix": "★ 最容易漏：很多 AI 客服藏着不设这个菜单项",
+   "id": "B17",
+   "level": "shall",
+   "requirement": "菜单选择：对话界面应设置「转人工服务」或类似表述作为菜单选项",
+   "veto": false
+  },
+  {
+   "clause": "5.2.2.4",
+   "how_to_fix": "电话客服按 0 转人工，别和业务键复用",
+   "id": "B18",
+   "level": "shall",
+   "requirement": "按键选择：触发人工的按键须在服务流程中保持功能独立，避免与其他业务按键冲突",
+   "veto": false
+  },
+  {
+   "clause": "5.2.2.5",
+   "how_to_fix": "唤醒词要在开场提示里说出来",
+   "id": "B19",
+   "level": "shall",
+   "requirement": "语音指令：支持语音的系统应统一提示唤醒词（如「转人工」），识别后立即进入转接",
+   "veto": false
+  },
+  {
+   "clause": "5.2.2.1",
+   "how_to_fix": "见 B21、B22",
+   "id": "B20",
+   "level": "shall",
+   "requirement": "系统自动转人工：需具备特定场景自动转接、情绪感知能力",
+   "veto": false
+  },
+  {
+   "clause": "5.2.2.6 a)",
+   "how_to_fix": "设轮次阈值（如 2-3 轮未识别即转），别死磕",
+   "id": "B21a",
+   "level": "shall",
+   "requirement": "【一票项】交互失败阈值：与客户针对某一项产品或服务交互达到阈值仍无法识别客户表达",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 b)",
+   "how_to_fix": "客户说「别让机器答了」必须马上转，不能挽留",
+   "id": "B21b",
+   "level": "shall",
+   "requirement": "【一票项】客户明确表示拒绝智能客户服务",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 c)",
+   "how_to_fix": "涉身份证/银行卡/密码等，直接转人工",
+   "id": "B21c",
+   "level": "shall",
+   "requirement": "【一票项】对话内容涉及信息安全",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 d)",
+   "how_to_fix": "同 B9，建风险场景词库",
+   "id": "B21d",
+   "level": "shall",
+   "requirement": "【一票项】涉及人身、财产安全的紧急情况、风险场景",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 e)",
+   "how_to_fix": "★ 有明确数字：3 分钟。系统要有超时计时器",
+   "id": "B21e",
+   "level": "shall",
+   "requirement": "【一票项】智能响应超时（原文举例：响应时长超过 3 min）",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.7",
+   "how_to_fix": "注意：要先确认再转，不能默默转走",
+   "id": "B22",
+   "level": "shall",
+   "requirement": "情绪感知：感知到负面情感或投诉意愿后，经与客户确认，应自动转接人工",
+   "veto": false
+  },
+  {
+   "clause": "5.2.3.1",
+   "how_to_fix": "人工坐席想甩给 AI，必须先问客户同不同意",
+   "id": "B23",
+   "level": "may",
+   "requirement": "人工 → 智能切换：须明确告知客户并征得客户同意（常见问题、客户偏好、工作负荷重、紧急情况四种情形）",
+   "veto": false
+  },
+  {
+   "clause": "5.2.3.2",
+   "how_to_fix": "高频问题在知识库里有标准答案，才谈得上让 AI 接手；转之前必须告知并征得同意",
+   "id": "B24",
+   "level": "may",
+   "requirement": "人工 → 智能切换（常见问题）：问题重复性高、知识库有明确答案且能快速准确解答时，可切换（须先明确告知客户并征得同意）",
+   "veto": false
+  },
+  {
+   "clause": "5.2.3.3",
+   "how_to_fix": "客户主动说要用智能客服的，可以转，但同样要告知清楚并在系统里留痕",
+   "id": "B25",
+   "level": "may",
+   "requirement": "人工 → 智能切换（客户偏好）：客户明确偏好智能服务（如直接说「转智能客服」）时，可切换（须先明确告知并征得同意）",
+   "veto": false
+  },
+  {
+   "clause": "6.1.1",
+   "how_to_fix": "有外呼业务的才涉及",
+   "id": "C1",
+   "level": "shall",
+   "requirement": "根据呼出任务的复杂程度和类型分配给智能或人工",
+   "veto": false
+  },
+  {
+   "clause": "6.1.2",
+   "how_to_fix": "正面清单",
+   "id": "C2",
+   "level": "should",
+   "requirement": "闭台式问题、标准化问题、通知提醒类 → 宜优先智能外呼",
+   "veto": false
+  },
+  {
+   "clause": "6.1.3",
+   "how_to_fix": "别用 AI 做开放式回访",
+   "id": "C3",
+   "level": "shall",
+   "requirement": "任务复杂（个性化需求、模糊表达）、含开放式问答（客户回访、市场调研）→ 应优先人工外呼",
+   "veto": false
+  },
+  {
+   "clause": "6.2.1",
+   "how_to_fix": "同 B16-B19 的四种方式",
+   "id": "C4",
+   "level": "should",
+   "requirement": "智能外呼时宜提供切换人工的选项（关键词/菜单/按键/语音）",
+   "veto": false
+  },
+  {
+   "clause": "6.2.2",
+   "how_to_fix": "可选",
+   "id": "C5",
+   "level": "may",
+   "requirement": "人工外呼时可提供切换智能的选项",
+   "veto": false
+  },
+  {
+   "clause": "7.1.1",
+   "how_to_fix": "有明确秒数",
+   "id": "D1",
+   "level": "may",
+   "requirement": "人工在线客服结束条件：客户许可 / 完成服务 60 s 后无新需求 / 客户超 60 s 无交互",
+   "veto": false
+  },
+  {
+   "clause": "7.1.1",
+   "how_to_fix": "有明确秒数/次数",
+   "id": "D2",
+   "level": "may",
+   "requirement": "人工电话客服结束条件：完成并征得许可、问「还有别的问题吗」10 s 后或发起交互 2 次后仍无回应",
+   "veto": false
+  },
+  {
+   "clause": "7.1.2",
+   "how_to_fix": "与人工语音同标准",
+   "id": "D3",
+   "level": "may",
+   "requirement": "智能语音客服：获得许可 / 完成服务 60 s 后无新需求 / 超 60 s 无交互，可自动结束",
+   "veto": false
+  },
+  {
+   "clause": "7.1.2",
+   "how_to_fix": "必须自己定一个阈值并写下来，不能没规则",
+   "id": "D4",
+   "level": "may",
+   "requirement": "智能在线客服：阈值时长由组织根据实际情况设定",
+   "veto": false
+  },
+  {
+   "clause": "7.2",
+   "how_to_fix": "评价入口不能藏",
+   "id": "D5",
+   "level": "shall",
+   "requirement": "服务结束时须主动邀请客户满意度评价（客户拒绝则避免进一步打扰）",
+   "veto": false
+  },
+  {
+   "clause": "7.2",
+   "how_to_fix": "同 A5，工单闭环是硬要求",
+   "id": "D6",
+   "level": "shall",
+   "requirement": "须同步生成完整服务记录、填写工单，待办事项通过工单系统流转与闭环",
+   "veto": false
+  },
+  {
+   "clause": "8.1",
+   "how_to_fix": "依据 GB/T 22239 执行",
+   "id": "E1",
+   "level": "shall",
+   "requirement": "对客户身份信息、历史交互记录、未完成工单数据建立分级备份机制；实时增量备份 + 定期全量备份结合",
+   "veto": false
+  },
+  {
+   "clause": "8.2",
+   "how_to_fix": "等保是另一个体系，需单独评估",
+   "id": "E2",
+   "level": "shall",
+   "requirement": "依据 GB/T 22239 启动对应等级的安全保护措施：访问权限精细化管控、备份数据加密传输与存储、备份操作日志",
+   "veto": false
+  },
+  {
+   "clause": "9.1",
+   "how_to_fix": "指定负责人（可与 A4 同一人）",
+   "id": "F1",
+   "level": "shall",
+   "requirement": "将人工与智能客服视为完整的服务，建立协同改进机制，安排专人负责，定期调查、整理投诉与反馈",
+   "veto": false
+  },
+  {
+   "clause": "9.1",
+   "how_to_fix": "引用《投诉处理规范》",
+   "id": "F2",
+   "level": "shall",
+   "requirement": "投诉处理依据 GB/T 17242",
+   "veto": false
+  },
+  {
+   "clause": "9.2",
+   "how_to_fix": "定周期",
+   "id": "F3",
+   "level": "shall",
+   "requirement": "定期开展协同服务改进调查（可并入满意度调查）",
+   "veto": false
+  },
+  {
+   "clause": "9.2",
+   "how_to_fix": "渠道要有，时效要写明",
+   "id": "F4",
+   "level": "shall",
+   "requirement": "开通协同服务的投诉与反馈渠道（电话、电子邮件、网络留言等），并设定处理规则与处理时效",
+   "veto": false
+  },
+  {
+   "clause": "9.2",
+   "how_to_fix": "客服系统要有监测能力",
+   "id": "F5",
+   "level": "shall",
+   "requirement": "系统监测：对交互动作、客服感受、诉求动态反馈等监测",
+   "veto": false
+  },
+  {
+   "clause": "9.2",
+   "how_to_fix": "★ 标准原文明确认可的第三方服务形态",
+   "id": "F6",
+   "level": "may",
+   "requirement": "第三方评估：可委托具备客服行业专业资质的第三方机构，通过模拟真实客户交互场景、拆解协同关键节点，形成评估报告",
+   "veto": false
+  },
+  {
+   "clause": "9.3",
+   "how_to_fix": "改进报告按这四个维度写",
+   "id": "F7",
+   "level": "shall",
+   "requirement": "改进内容须含：协同服务效率、协同服务质量、切换顺畅程度、客户信息管理四方面",
+   "veto": false
+  }
+ ],
+ "meta": {
+  "checklist_version": "v2.0",
+  "citation": "合尘猫. AI 客服国标自查清单 v2.0（GB/T 47746—2026）. 2026-09-19. https://savantcat.cn/ai-compliance-check.html",
+  "code": "GB/T 47746-2026",
+  "disclaimer": "本清单由合尘猫依标准原文整理，非标准发布机构发布，不构成认证、审计结论或法律意见；标准解释以官方正式文本为准。条文引用仅为条款定位所需最短摘录。",
+  "effective": "2026-09-01",
+  "license": "CC BY 4.0（署名 + 保留来源链接）；商业使用需授权",
+  "nature": "推荐性国家标准",
+  "onepager_en": "https://savantcat.cn/en/compliance-onepager.html",
+  "onepager_zh": "https://savantcat.cn/ai-compliance-onepager.html",
+  "open_data": "https://savantcat.cn/data/checklist-v2.0.json",
+  "published": "2026-05-25",
+  "sdo": "SAC/TC264 全国服务标准化技术委员会",
+  "source": "https://savantcat.cn/ai-compliance-check.html",
+  "standard": "GB/T 47746—2026 顾客联络服务 人工与智能客户服务协同要求",
+  "verified_on": "2026-09-19"
+ },
+ "veto_items": [
+  {
+   "clause": "5.2.2.6 a)",
+   "how_to_fix": "设轮次阈值（如 2-3 轮未识别即转），别死磕",
+   "id": "B21a",
+   "level": "shall",
+   "requirement": "【一票项】交互失败阈值：与客户针对某一项产品或服务交互达到阈值仍无法识别客户表达",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 b)",
+   "how_to_fix": "客户说「别让机器答了」必须马上转，不能挽留",
+   "id": "B21b",
+   "level": "shall",
+   "requirement": "【一票项】客户明确表示拒绝智能客户服务",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 c)",
+   "how_to_fix": "涉身份证/银行卡/密码等，直接转人工",
+   "id": "B21c",
+   "level": "shall",
+   "requirement": "【一票项】对话内容涉及信息安全",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 d)",
+   "how_to_fix": "同 B9，建风险场景词库",
+   "id": "B21d",
+   "level": "shall",
+   "requirement": "【一票项】涉及人身、财产安全的紧急情况、风险场景",
+   "veto": true
+  },
+  {
+   "clause": "5.2.2.6 e)",
+   "how_to_fix": "★ 有明确数字：3 分钟。系统要有超时计时器",
+   "id": "B21e",
+   "level": "shall",
+   "requirement": "【一票项】智能响应超时（原文举例：响应时长超过 3 min）",
+   "veto": true
+  }
+ ]
+}
