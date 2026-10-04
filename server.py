@@ -49,8 +49,12 @@ except ImportError:  # 老版本 SDK 无此模块
     TransportSecuritySettings = None
 
 DEFAULT_ALLOWED_HOSTS = [
-    "savantcat.cn", "savantcat.cn:443", "www.savantcat.cn", "www.savantcat.cn:443",
-    "127.0.0.1:8765", "localhost:8765", "127.0.0.1", "localhost",
+    "savantcat.cn", "savantcat.cn:443", "savantcat.cn:*",
+    "www.savantcat.cn", "www.savantcat.cn:443", "www.savantcat.cn:*",
+    # 本机通配端口：SDK 的 _validate_host 支持 "host:*" 模式。
+    # 必须留通配，否则任何「把容器端口映射到别的宿主机端口」的探活
+    # （本地测试、CI、Glama 的构建测试）都会吃 421 Invalid Host header。
+    "127.0.0.1", "127.0.0.1:*", "localhost", "localhost:*",
 ]
 
 
