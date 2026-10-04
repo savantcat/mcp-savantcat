@@ -1,2 +1,4 @@
 # pip install -r requirements.txt
-mcp>=1.9
+# 服务端使用 mcp 2.x 的 MCPServer（v1 的 FastMCP 已改名）；代码内保留 v1 兼容导入，
+# 但依赖声明要指向 2.x，避免解析到旧版后行为不一致。
+mcp>=2.0
