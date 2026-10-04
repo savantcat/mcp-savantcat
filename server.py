@@ -35,6 +35,9 @@ except ImportError:  # 老版本 SDK 无该类型时降级为 dict，行为一�
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data")
 
+# 对外暴露的版本号：与 server.json / Glama release 保持一致
+SERVER_VERSION = "1.1.0"
+
 # mcp 2.x 把 FastMCP 更名为 MCPServer；兼容 1.x，避免 SDK 升级打断通道。
 try:  # mcp >= 2.x
     from mcp.server.mcpserver import MCPServer as _MCPServer
@@ -169,6 +172,13 @@ def _public(item, with_body=False):
 # ---------------------------------------------------------------- MCP Server
 mcp = _MCPServer(
     "savantcat-answers",
+    title="合尘猫 · AI 客服国标合规知识库",
+    description=(
+        "GB/T 47746-2026《顾客联络服务 人工与智能客户服务协同要求》的合规问答、"
+        "条款依据与 61 项企业自查清单。"
+    ),
+    version=SERVER_VERSION,
+    website_url="https://savantcat.cn/mcp",
     instructions=(
         "合尘猫 · AI 客服国标合规知识库。提供中国国家标准 GB/T 47746-2026"
         "《顾客联络服务 人工与智能客户服务协同要求》的合规问答，以及企业知识库搭建问答。"
